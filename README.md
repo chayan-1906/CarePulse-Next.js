@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CarePulse
 
-## Getting Started
+## Available Scripts
+In the project directory, you can run:
 
-First, run the development server:
+### `npm run serve`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Runs the app in the development mode.
+Open [http://localhost:4000](http://localhost:3000) to view it in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `next build`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Builds the app for production to the `.next` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
-## Learn More
+## [Live Site (Vercel)](https://care-pulsee.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+# Dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### React Phone Number Input - https://www.npmjs.com/package/react-phone-number-input
+    npm i react-phone-number-input
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Shadcn/UI - https://ui.shadcn.com/docs/installation/next
+    npx shadcn-ui@latest init
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Shadcn/UI Components -
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Button - https://ui.shadcn.com/docs/components/button
+    npx shadcn-ui@latest add button
+
+### Form - https://ui.shadcn.com/docs/components/form
+    npx shadcn@latest add form
+
+
+
+
+# Preview

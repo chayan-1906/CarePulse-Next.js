@@ -1,4 +1,6 @@
-/* eslint-disable no-unused-vars */
+import {Control} from "react-hook-form";
+import {FormFieldType} from "@/components/forms/PatientForm";
+import React from "react";
 
 declare type SearchParamProps = {
     params: { [key: string]: string };
@@ -55,3 +57,26 @@ declare type UpdateAppointmentParams = {
     appointment: Appointment;
     type: string;
 };
+
+
+export interface CustomProps {
+    fieldType: FormFieldType;
+    control: Control<any>;
+    name: string;
+    label?: string;
+    placeholder?: string;
+    iconSrc?: string;
+    iconAlt?: string;
+    disabled?: boolean;
+    dateFormat?: string;
+    showTimeSelect?: boolean;
+    children?: React.ReactNode;
+    renderSkeleton?: (field: any) => React.ReactNode;
+}
+
+export interface ButtonProps {
+    isLoading: boolean;
+    loadingText?: string;
+    className?: string;
+    children?: React.ReactNode;
+}
