@@ -10,6 +10,7 @@ import {useState} from "react";
 import {UserFormValidation} from "@/lib/validation";
 import {useRouter} from "next/navigation";
 import routes from "@/lib/routes";
+import {createUser} from "@/lib/actions/patient.actions";
 
 export enum FormFieldType {
     INPUT = 'input',
@@ -39,10 +40,11 @@ function PatientForm() {
 
         try {
             const userData = {name, email, phone};
-            /*const user = createUser(userData);
+            const user = await createUser(userData);
             if (user) {
+                setIsLoading(false);
                 router.push(routes.registerPath(user.$id));
-            }*/
+            }
         } catch (error) {
             console.error('PatientForm onSubmit: ❌', error);
         }

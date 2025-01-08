@@ -35,6 +35,9 @@ Your app is ready to be deployed!
 ### Form - https://ui.shadcn.com/docs/components/form
     npx shadcn@latest add form
 
+### Appwrite - https://appwrite.io/docs/quick-starts/node
+    npm i node-appwrite
+
 
 
 
