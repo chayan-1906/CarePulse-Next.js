@@ -8,6 +8,8 @@ import {Input} from "@/components/ui/input";
 import 'react-phone-number-input/style.css'
 import PhoneInput from "react-phone-number-input";
 import {E164Number} from "libphonenumber-js";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const RenderField = ({field, props}: { field: any, props: CustomProps }) => {
     const {fieldType, control, name, label, placeholder, iconSrc, iconAlt, disabled, dateFormat, showTimeSelect, children, renderSkeleton} = props;
@@ -24,6 +26,7 @@ const RenderField = ({field, props}: { field: any, props: CustomProps }) => {
                     </FormControl>
                 </div>
             );
+
         case FormFieldType.PHONE_INPUT:
             return (
                 <FormControl>
@@ -38,6 +41,23 @@ const RenderField = ({field, props}: { field: any, props: CustomProps }) => {
                     />
                 </FormControl>
             );
+
+        case FormFieldType.DATE_PICKER:
+            return (
+                <div className={'flex rounded-md border border-dark-500 bg-dark-400'}>
+                    <Image src={'/assets/icons/calendar.svg'} alt={'calendar'} height={24} width={24} className={'ml-2'}/>
+                    <FormControl>
+                        <DatePicker selected={field.value} onChange={(date) => field.onChange(date)} dateFormat={dateFormat ?? 'dd/MM/yyy'}
+                                    showTimeSelect={showTimeSelect ?? false} timeInputLabel={'Time:'} wrapperClassName={'date-picker'}/>
+                    </FormControl>
+                </div>
+            );
+
+        case FormFieldType.SKELETON:
+            return (
+                renderSkeleton ? renderSkeleton(field) : null
+            );
+
         default:
             break;
     }

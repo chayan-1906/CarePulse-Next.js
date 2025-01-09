@@ -23,6 +23,13 @@ Your app is ready to be deployed!
 ### React Phone Number Input - https://www.npmjs.com/package/react-phone-number-input
     npm i react-phone-number-input
 
+### Appwrite - https://appwrite.io/docs/quick-starts/node
+    npm i node-appwrite
+
+### Date Picker - https://www.npmjs.com/package/react-datepicker
+    npm install react-datepicker --save
+
+
 
 ### Shadcn/UI - https://ui.shadcn.com/docs/installation/next
     npx shadcn-ui@latest init
@@ -35,8 +42,13 @@ Your app is ready to be deployed!
 ### Form - https://ui.shadcn.com/docs/components/form
     npx shadcn@latest add form
 
-### Appwrite - https://appwrite.io/docs/quick-starts/node
-    npm i node-appwrite
+### Radio Group - https://ui.shadcn.com/docs/components/radio-group
+    npx shadcn@latest add radio-group
+
+### Select - https://ui.shadcn.com/docs/components/select
+    npx shadcn@latest add select
+
+
 
 
 

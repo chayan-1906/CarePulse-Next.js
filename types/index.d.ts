@@ -3,9 +3,9 @@ import {FormFieldType} from "@/components/forms/PatientForm";
 import React from "react";
 
 declare type SearchParamProps = {
-    params: { [key: string]: string };
-    searchParams: { [key: string]: string | string[] | undefined };
-};
+    params: Promise<{ [key: string]: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
 declare type Gender = "Male" | "Female" | "Other";
 declare type Status = "pending" | "scheduled" | "cancelled";
