@@ -29,6 +29,9 @@ Your app is ready to be deployed!
 ### Date Picker - https://www.npmjs.com/package/react-datepicker
     npm install react-datepicker --save
 
+### React Dropzone - https://www.npmjs.com/package/react-dropzone
+    npm install --save react-dropzone
+
 
 
 ### Shadcn/UI - https://ui.shadcn.com/docs/installation/next
@@ -48,6 +51,11 @@ Your app is ready to be deployed!
 ### Select - https://ui.shadcn.com/docs/components/select
     npx shadcn@latest add select
 
+### TextArea - https://ui.shadcn.com/docs/components/textarea
+    npx shadcn@latest add textarea
+
+### Checkbox - https://ui.shadcn.com/docs/components/checkbox
+    npx shadcn@latest add checkbox
 
 
 

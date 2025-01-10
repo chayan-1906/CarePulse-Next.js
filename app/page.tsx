@@ -3,7 +3,7 @@ import PatientForm from "@/components/forms/PatientForm";
 import Link from "next/link";
 import routes from "@/lib/routes";
 
-function Home() {
+function HomePage() {
     return (
         <div className={'flex h-screen max-h-screen'}>
             {/** TODO: OTP Verification | PasskeyModal */}
@@ -17,6 +17,8 @@ function Home() {
                         <Link href={routes.adminPath()} className={'text-green-500'}>Admin</Link>
                     </div>
                 </div>
+
+                <Link href={routes.registerPath('677e716a0032906a319f')} className={'text-yellow-300'}>Register Path</Link>
             </section>
 
             <Image src={'/assets/images/onboarding-img.png'} alt={'patient'} height={1000} width={1000} className={'side-img max-w-[50%]'}/>
@@ -24,4 +26,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default HomePage;

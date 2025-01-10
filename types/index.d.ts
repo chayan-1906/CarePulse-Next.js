@@ -80,3 +80,8 @@ export interface ButtonProps {
     className?: string;
     children?: React.ReactNode;
 }
+
+export interface FileUploaderProps {
+    files: File[] | undefined;
+    onChange: (files: File[]) => void;
+}
