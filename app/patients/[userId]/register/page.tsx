@@ -15,7 +15,7 @@ async function RegistrationPage({params, searchParams}: SearchParamProps) {
                 <div className={'flex flex-col flex-1 py-10 sub-container max-w-[860px]'}>
                     <Image src={'/assets/icons/logo-full.svg'} alt={'logo'} height={1000} width={1000} className={'mb-12 h-10 w-fit'}/>
                     <RegisterForm user={user}/>
-                    <p className={'justify-items-end text-dark-600 xl:text-left'}>© 2025 CarePulse</p>
+                    <p className={'copyright py-12'}>© 2025 CarePulse</p>
                 </div>
             </section>
 

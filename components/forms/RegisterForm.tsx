@@ -7,10 +7,8 @@ import {Form, FormControl} from "@/components/ui/form";
 import CustomFormField from "@/components/CustomFormField";
 import SubmitButton from "@/components/SubmitButton";
 import {useState} from "react";
-import {PatientFormValidation, UserFormValidation} from "@/lib/validation";
+import {PatientFormValidation} from "@/lib/validation";
 import {useRouter} from "next/navigation";
-import routes from "@/lib/routes";
-import {createUser} from "@/lib/actions/patient.actions";
 import {User} from "@/types";
 import {FormFieldType} from "@/components/forms/PatientForm";
 import {Doctors, GenderOptions, IdentificationTypes, PatientFormDefaultValues} from "@/constants";
@@ -19,6 +17,9 @@ import {Label} from "@/components/ui/label";
 import {SelectItem} from "@/components/ui/select";
 import Image from "next/image";
 import FileUploader from "@/components/FileUploader";
+import Routes from "@/lib/routes";
+import {registerPatient} from "@/lib/actions/patient.actions";
+import {Button} from "@/components/ui/button";
 
 function RegisterForm({user}: { user: User }) {
     const router = useRouter();
@@ -28,25 +29,44 @@ function RegisterForm({user}: { user: User }) {
         resolver: zodResolver(PatientFormValidation),
         defaultValues: {
             ...PatientFormDefaultValues,
-            name: user.name,
-            email: user.email,
-            phone: user.phone,
+            name: '',
+            email: '',
+            phone: '',
         },
     });
 
-    async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
+    async function onSubmit(values: z.infer<typeof PatientFormValidation>) {
         setIsLoading(true);
 
+        let formData;
+        if (values.identificationDocument && values.identificationDocument.length > 0) {
+            const blobFile = new Blob([values.identificationDocument[0]], {
+                type: values.identificationDocument[0].type,
+            });
+
+            formData = new FormData();
+            formData.append('blobFile', blobFile);
+            formData.append('fileName', values.identificationDocument[0].name);
+        }
+
         try {
-            const userData = {name, email, phone};
-            const user = await createUser(userData);
-            if (user) {
-                setIsLoading(false);
-                router.push(routes.registerPath(user.$id));
+            const patientData = {
+                ...values,
+                userId: user.$id,
+                birthDate: new Date(values.birthDate),
+                identificationDocument: formData,
+            };
+
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            const patient = await registerPatient(patientData);
+            if (patient) {
+                router.push(Routes.newAppointmentPath(user.$id));
             }
         } catch (error) {
             console.error('PatientForm onSubmit: ❌', error);
         }
+        setIsLoading(false);
     }
 
     return (
@@ -183,6 +203,7 @@ function RegisterForm({user}: { user: User }) {
                 </section>
 
                 <SubmitButton isLoading={isLoading} loadingText={'Please wait...'}>Get Started</SubmitButton>
+                <Button onClick={() => router.push(Routes.newAppointmentPath(user.$id))}>Test</Button>
             </form>
         </Form>
     );

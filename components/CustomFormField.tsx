@@ -51,7 +51,7 @@ const RenderField = ({field, props}: { field: any, props: CustomProps }) => {
                 <div className={'flex rounded-md border border-dark-500 bg-dark-400'}>
                     <Image src={'/assets/icons/calendar.svg'} alt={'calendar'} height={24} width={24} className={'ml-2'}/>
                     <FormControl>
-                        <DatePicker selected={value} onChange={(date) => onChange(date)} dateFormat={dateFormat ?? 'dd/MM/yyy'}
+                        <DatePicker selected={value} onChange={(date) => onChange(date)} dateFormat={dateFormat ?? 'dd/MM/yyyy'}
                                     showTimeSelect={showTimeSelect ?? false} timeInputLabel={'Time:'} wrapperClassName={'date-picker'}/>
                     </FormControl>
                 </div>
