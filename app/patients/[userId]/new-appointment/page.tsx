@@ -3,6 +3,7 @@ import AppointmentForm from "@/components/forms/AppointmentForm";
 import {SearchParamProps} from "@/types";
 import {getPatient} from "@/lib/actions/patient.actions";
 
+// /patients/677e716a0032906a319f/new-appointment
 async function NewAppointmentPage({params}: SearchParamProps) {
     const {userId} = await params;
     const patient = await getPatient(userId);
