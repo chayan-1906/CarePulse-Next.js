@@ -1,6 +1,7 @@
 const routes = {
     homePath: () => '/',
     adminPath: () => '?admin=true',
+    adminHomePath: () => '/admin',
 
     registerPath: (userId: string) => `/patients/${userId}/register`,
     newAppointmentPath: (userId: string) => `/patients/${userId}/new-appointment`,

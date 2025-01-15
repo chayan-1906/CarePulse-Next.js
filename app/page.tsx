@@ -2,11 +2,17 @@ import Image from "next/image";
 import PatientForm from "@/components/forms/PatientForm";
 import Link from "next/link";
 import routes from "@/lib/routes";
+import {SearchParamProps} from "@/types";
+import PasskeyModal from "@/components/PasskeyModal";
 
-function HomePage() {
+async function HomePage({searchParams}: SearchParamProps) {
+    const {admin: isAdmin} = await searchParams;
+
     return (
         <div className={'flex h-screen max-h-screen'}>
-            {/** TODO: OTP Verification | PasskeyModal */}
+            {isAdmin && (
+                <PasskeyModal/>
+            )}
 
             <section className={'remove-scrollbar container my-auto'}>
                 <div className={'sub-container max-w-[496px]'}>

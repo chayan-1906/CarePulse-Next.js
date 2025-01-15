@@ -57,6 +57,12 @@ Your app is ready to be deployed!
 ### Checkbox - https://ui.shadcn.com/docs/components/checkbox
     npx shadcn@latest add checkbox
 
+### Alert Dialog - https://ui.shadcn.com/docs/components/alert-dialog
+    npx shadcn@latest add alert-dialog
+
+### Input OTP - https://ui.shadcn.com/docs/components/input-otp
+    npx shadcn@latest add input-otp
+
 
 
 
