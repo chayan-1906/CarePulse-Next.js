@@ -18,6 +18,8 @@ Your app is ready to be deployed!
 
 ## [Live Site (Vercel)](https://care-pulsee.vercel.app/)
 
+## Appwrite DB - https://cloud.appwrite.io/console/project-677e59600002e1f9ce19/overview/platforms
+
 # Dependencies
 
 ### React Phone Number Input - https://www.npmjs.com/package/react-phone-number-input
@@ -63,7 +65,11 @@ Your app is ready to be deployed!
 ### Input OTP - https://ui.shadcn.com/docs/components/input-otp
     npx shadcn@latest add input-otp
 
+### DataTable - https://ui.shadcn.com/docs/components/data-table
+    npx shadcn@latest add table
 
+### Dropdown Menu - https://ui.shadcn.com/docs/components/dropdown-menu
+    npx shadcn@latest add dropdown-menu
 
 
 

@@ -203,7 +203,6 @@ function RegisterForm({user}: { user: User }) {
                 </section>
 
                 <SubmitButton isLoading={isLoading} loadingText={'Please wait...'}>Get Started</SubmitButton>
-                <Button onClick={() => router.push(Routes.newAppointmentPath(user.$id))}>Test</Button>
             </form>
         </Form>
     );

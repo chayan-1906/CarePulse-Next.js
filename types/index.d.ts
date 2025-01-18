@@ -1,6 +1,7 @@
 import {Control} from "react-hook-form";
 import {FormFieldType} from "@/components/forms/PatientForm";
 import React from "react";
+import {ColumnDef} from "@tanstack/react-table";
 
 declare type SearchParamProps = {
     params: Promise<{ [key: string]: string }>;
@@ -84,4 +85,16 @@ export interface ButtonProps {
 export interface FileUploaderProps {
     files: File[] | undefined;
     onChange: (files: File[]) => void;
+}
+
+export interface StatCardProps {
+    type: 'appointments' | 'pending' | 'cancelled';
+    count: number;
+    label: string;
+    icon: string;
+}
+
+export interface DataTableProps<TData, TValue> {
+    columns: ColumnDef<TData, TValue>[];
+    data: TData[];
 }
