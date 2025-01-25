@@ -34,6 +34,9 @@ Your app is ready to be deployed!
 ### React Dropzone - https://www.npmjs.com/package/react-dropzone
     npm install --save react-dropzone
 
+### Sentry - https://sentry.io/welcome/
+	npx @sentry/wizard@latest -i nextjs
+
 
 
 ### Shadcn/UI - https://ui.shadcn.com/docs/installation/next

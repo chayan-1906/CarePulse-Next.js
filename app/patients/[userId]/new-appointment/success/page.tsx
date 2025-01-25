@@ -6,6 +6,8 @@ import {getAppointment} from "@/lib/actions/appointment.actions";
 import {Doctors} from "@/constants";
 import {formatDateTime} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
+import * as Sentry from "@sentry/nextjs";
+import {getUser} from "@/lib/actions/patient.actions";
 
 // /patients/677e716a0032906a319f/new-appointment/success?appointmentId=678627ae000c832d0db6
 // /patients/677e716a0032906a319f/new-appointment/success?appointmentId=67880503003822ac3bbb
@@ -13,9 +15,12 @@ async function AppointmentSuccessPage({params, searchParams}: SearchParamProps) 
     const {userId} = await params;
     const {appointmentId} = await searchParams;
     const appointment = await getAppointment(appointmentId);
+    const user = await getUser(userId);
 
     const doctor = Doctors.find((doc) => doc.name === appointment.primaryPhysician);
     const {name, image} = doctor || {};
+
+    Sentry.metrics.set('user_view_appointment-success', user.name);
 
     return (
         <div className={'flex h-screen max-h-screen px-[5%]'}>
