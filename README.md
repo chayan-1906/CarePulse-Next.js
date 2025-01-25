@@ -77,3 +77,35 @@ Your app is ready to be deployed!
 
 
 # Preview
+
+<table>
+    <tr>
+        <td colspan="2">
+            <img src="https://github.com/user-attachments/assets/ba9a9657-a0e5-4e37-a929-ecb867eb753e" alt="home-page">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/user-attachments/assets/a1954dcb-a996-4e41-aff1-243b234ca51b" alt="register-page-1">
+        </td>
+        <td>
+            <img src="https://github.com/user-attachments/assets/ea2783ad-3c4a-461f-adce-68ed0282fb08" alt="register-page-2">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/user-attachments/assets/d758e719-ad35-4f30-909f-45f11ba6289e" alt="new-appointment">
+        </td>
+        <td>
+            <img src="https://github.com/user-attachments/assets/10fbceda-394c-4b28-a34f-9b64f0007618" alt="success-page">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/user-attachments/assets/10c51848-d17c-4775-b239-f9480042bf08" alt="admin-passkey">
+        </td>
+        <td>
+            <img src="https://github.com/user-attachments/assets/4201bcfb-f59e-4466-8d12-7af24bd27935" alt="admin-dashboard">
+        </td>
+    </tr>
+</table>
